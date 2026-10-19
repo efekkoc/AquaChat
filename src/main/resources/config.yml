@@ -30,6 +30,31 @@ items:
   hover_display_name: true
   show_lore_and_enchants: true
 
-cooldown:
-  chat_cooldown_seconds: 1.5
-  bypass_permission: "aquachat.bypass.cooldown"
+# ==============================================================================
+#                      Enterprise Anti-Spam Shield
+# ==============================================================================
+anti_spam:
+  enabled: true
+  # Message cooldown in seconds
+  chat_cooldown_seconds: 2.0
+  bypass_permission: "aquachat.bypass.spam"
+  
+  # Block duplicate messages
+  block_duplicate_messages: true
+  duplicate_message_warning: "<gradient:#ff416c:#ff4b2b>Spam Engellendi!</gradient> <gray>Lütfen aynı mesajı tekrar tekrar göndermeyiniz."
+
+  # CAPS lock filter
+  block_excessive_caps: true
+  caps_percentage_threshold: 65
+  caps_min_length: 6
+  caps_warning: "<gradient:#ff416c:#ff4b2b>Büyük Harf Uyarısı!</gradient> <gray>Lütfen aşırı büyük harf kullanmayınız."
+
+  # Command spam rate limiter
+  command_rate_limit: true
+  command_cooldown_seconds: 1.0
+  command_warning: "<gradient:#ff416c:#ff4b2b>Yavaşlayın!</gradient> <gray>Çok hızlı komut giriyorsunuz."
+
+  # Temporary Auto-Mute on repeated violations
+  auto_mute_enabled: true
+  auto_mute_violations: 4
+  auto_mute_duration_seconds: 60
